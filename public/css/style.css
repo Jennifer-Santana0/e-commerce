@@ -1,6 +1,55 @@
-h1{
-    color: red;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-body{
-    background-color: red;
+:root{
+    --black: #000000;
+    --white: #fff;
+    --red: rgb(229,68,68);
+    --gray: rgb(175,175,175);
+    --gray-black: rgb(245,245,245) 
+}
+header{
+    border-bottom: 1px solid var(--gray);
+}
+header div:first-child{
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+}
+header div:first-child a{
+    color: var(--white);
+}
+
+header div:last-child{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: .8rem;
+}
+header div:last-child ul{
+    display: flex;
+    list-style: none;
+}
+header div:last-child ul li a{
+    padding: 0 .5rem;
+    color: var(--black);
+    text-decoration: none;
+}
+header div:last-child span{
+    background-color: var(--gray-black);
+    padding: .3rem;
+    border-radius: 5px;
+}
+header div:last-child input{
+    border: none;
+    outline: none;
+    background-color: var(--gray-black);
+    padding: .5rem;
+}
+header div:last-child i{
+    padding: .5rem;
 }
