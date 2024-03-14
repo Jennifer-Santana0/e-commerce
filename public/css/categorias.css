@@ -1,0 +1,11 @@
+section p:first-child{
+    color: var(--red);
+    font-size: 20px;
+    padding: 0 7rem;
+}
+section p:first-child::before{
+    content: 'a';
+    position: absolute;
+    left: -10px;
+
+}

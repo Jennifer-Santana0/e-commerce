@@ -8,48 +8,52 @@
     --black: #000000;
     --white: #fff;
     --red: rgb(229,68,68);
-    --gray: rgb(175,175,175);
-    --gray-black: rgb(245,245,245) 
+    --gray-black: rgb(175,175,175);
+    --gray: rgb(245,245,245);
 }
 header{
-    border-bottom: 1px solid var(--gray);
+    border-bottom: 1px solid var(--gray-black);
 }
-header div:first-child{
+#header-1{
     background-color: var(--black);
     color: var(--white);
     text-align: center;
     padding: 1rem;
 }
-header div:first-child a{
+#header-1 a{
     color: var(--white);
 }
 
-header div:last-child{
+
+
+#header-2{
     display: flex;
-    justify-content: space-around;
+    padding: .5rem 7rem;
+    justify-content: space-between;
     align-items: center;
-    padding: .8rem;
 }
-header div:last-child ul{
+
+#header-2 nav ul{
     display: flex;
     list-style: none;
 }
-header div:last-child ul li a{
+#header-2 nav ul li{
     padding: 0 .5rem;
-    color: var(--black);
+}
+#header-2 ul li a{
+    color: black;
     text-decoration: none;
 }
-header div:last-child span{
-    background-color: var(--gray-black);
-    padding: .3rem;
+#header-2 div span{
+    background-color: var(--gray);
+    padding: .5rem;
     border-radius: 5px;
 }
-header div:last-child input{
+#header-2 div input{
+    background-color: var(--gray);
     border: none;
     outline: none;
-    background-color: var(--gray-black);
-    padding: .5rem;
 }
-header div:last-child i{
-    padding: .5rem;
+#header-2 div i{
+    margin-left: 10px;
 }
