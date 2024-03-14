@@ -1,0 +1,26 @@
+main{
+    display: grid;
+    grid-template-columns: 25% 75%;
+}
+main div:first-child{
+    padding: 2rem;
+    display: flex;
+    justify-content: end;
+    
+}
+main div:first-child ul{
+    list-style: none;
+    width: 60%;
+}
+main div:first-child ul li{
+    padding: .5rem 0;
+}
+main div:first-child ul li a{
+    text-decoration: none;
+    color: var(--black);
+}
+main div:last-child{
+    border-left: 1px solid var(--gray);
+    padding: 2rem;
+    text-align: center;
+}
