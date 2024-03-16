@@ -1,0 +1,26 @@
+main{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    margin-bottom: 3rem;
+    margin-bottom: 8rem;
+}
+#main-1{
+    border-right: 1px solid var(--gray-black);
+}
+#main-1 ul{
+    padding: 1.5rem 7rem;
+}
+#main-1 ul{
+    list-style: none;
+}
+#main-1 ul li{
+    padding: .5rem 0;
+}
+#main-1 ul li a{
+    text-decoration: none;
+    color: black;
+}
+#main-2{
+    padding-top: 1.5rem;
+    text-align: center;
+}
