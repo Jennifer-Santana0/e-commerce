@@ -5,9 +5,10 @@ const axios = require('axios');
         //   console.log(response.data.data[`${index}`].product_photos[0])//img
 
 const getProdut = async (nome) => {
-    let lista_produtos = [
-       
-    ]
+    let nome_produto = []
+    let img_produto = []
+    let valor_produto = []
+    let lista_produto = []
     const options = {
         method: 'GET',
         url: 'https://real-time-product-search.p.rapidapi.com/search',
@@ -25,10 +26,17 @@ const getProdut = async (nome) => {
     try {
         const response = await axios.request(options);
         for (let index = 0; index < response.data.data.length; index++) {
-            lista_produtos.push(response.data.data[`${index}`].product_title)
+            nome_produto.push(response.data.data[`${index}`].product_title)
+            img_produto.push(response.data.data[`${index}`].product_photos[0])
+            valor_produto.push(response.data.data[`${index}`].offer.price)
         }
-        console.log(lista_produtos)
-        return lista_produtos
+        lista_produto.push(nome_produto)
+        lista_produto.push(img_produto)
+        lista_produto.push(valor_produto)
+
+        lista_produto.push(nome_produto,img_produto,valor_produto)
+
+        return lista_produto
     } catch (error) {
         console.error(error);
     }
