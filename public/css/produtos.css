@@ -1,0 +1,13 @@
+section {
+    padding: 3rem 7rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1rem;
+}
+
+.cards {
+    height: 50px;
+    background-color: red;
+    border: 1px solid;
+}
+

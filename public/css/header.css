@@ -28,7 +28,7 @@ header{
 
 #header-2{
     display: flex;
-    padding: 1rem  7rem;
+    padding: 1rem 7rem;
     justify-content: space-between;
     align-items: center;
 }
@@ -46,7 +46,6 @@ header{
 }
 #header-2 div form{
     background-color: var(--gray);
-
     padding: .5rem;
     border-radius: 5px;
     display: inline;

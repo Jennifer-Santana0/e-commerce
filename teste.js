@@ -20,6 +20,18 @@ console.log(produtos)
 
 
 
+// <!-- <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRcn4Q3P4EbbTKENwnnslZQdMutqKFB5em8RtZat8zW5nFXVWuqMRmbSAxeReTFXL-cuMAvaRBSDE7xA02GOimcbDMsxiOaBg&usqp=CAE" alt="foto"> -->
+//         <!-- <h4>Nome do produto</h4> -->
+//         <!-- <h4>valor</h4> -->
+
+// <!-- <%for (let index = 0; index < produtos[0].length; index++) {%>
+//     <h5>Nome: <%=produtos[0][index]%></h5>
+//     <h5>Img: <%=produtos[1][index]%></h5>
+//     <h5>Valor: <%=produtos[2][index]%></h5>
+//     <h1>-------------------------------------</h1>
+// <%}%> -->
+
+
 
 
 
