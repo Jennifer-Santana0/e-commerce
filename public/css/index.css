@@ -14,11 +14,12 @@ main{
     list-style: none;
 }
 #main-1 ul li{
-    padding: .5rem 0;
+    padding: 1rem 0;
 }
 #main-1 ul li a{
     text-decoration: none;
-    color: black;
+    color: rgb(0, 0, 0);
+    white-space: nowrap;
 }
 #main-2{
     padding-top: 1.5rem;
