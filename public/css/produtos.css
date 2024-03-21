@@ -4,10 +4,22 @@ section {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 1rem;
 }
-
 .cards {
-    height: 50px;
-    background-color: red;
+    height: 15rem;
+    background-color: rgb(15, 250, 223);
     border: 1px solid;
+    display: flex;
+    flex-direction: column;
 }
 
+.cards .img{
+    background-color: red;
+    flex: 70%;
+}
+.cards .img img{
+    width: 200px;
+}
+.cards .descricao{
+    background-color: rgb(143, 50, 50);
+    flex: 30%;
+}
