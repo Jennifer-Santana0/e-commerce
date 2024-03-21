@@ -17,7 +17,7 @@ const getProdut = async (categoria) => {
         list.push(list_price)
         list.push(list_img)
 
-        return console.log(list)
+        return list
         
     }catch(err){
         console.log('Houve um erro ' + err )

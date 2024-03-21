@@ -6,17 +6,17 @@ const showCategoria = async (req,res) => {
     let validacao_user = true
 
     if(categoria == 'electronics'){
-        await getProdut(req.params.categoria)
-        res.render('./produtos', {validacao_user})
+        const produtos = await getProdut(req.params.categoria)
+        res.render('./produtos', {validacao_user,produtos})
     }else if (categoria == 'jewelery'){
-        await getProdut(req.params.categoria)
-        res.render('./produtos', {validacao_user})
+        const produtos = await getProdut(req.params.categoria)
+        res.render('./produtos', {validacao_user,produtos})
     }else if (categoria == "men's clothing"){
-        await getProdut(req.params.categoria)
-        res.render('./produtos', {validacao_user})
+        const produtos = await getProdut(req.params.categoria)
+        res.render('./produtos', {validacao_user,produtos})
     }else if (categoria == "women's clothing"){
-        await getProdut(req.params.categoria)
-        res.render('./produtos', {validacao_user})
+        const produtos = await getProdut(req.params.categoria)
+        res.render('./produtos', {validacao_user,produtos})
     } else {
         validacao_user = false
         let type_list = ['electronics','jewelery',"men's clothing","women's clothing"]

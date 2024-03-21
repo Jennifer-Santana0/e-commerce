@@ -16,10 +16,20 @@ section {
     background-color: red;
     flex: 70%;
 }
+.cards .img div{
+    background-color: black;
+    color: white;
+}
 .cards .img img{
     width: 200px;
 }
 .cards .descricao{
     background-color: rgb(143, 50, 50);
     flex: 30%;
+    
+}
+.cards .descricao .texto-cortado{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

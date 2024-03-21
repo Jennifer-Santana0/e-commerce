@@ -5,36 +5,22 @@
 
 
 <section>
-    <div class="cards">
-        <div class="img">
-            <img src="/img/Iphone.png" alt="">
-        </div>
-        <div class="descricao">
-            <h3>Nome</h3>
-            <p>$200.00</p>
 
+    <%for (let index = 0; index < produtos[0].length; index++) {%>
+        <div class="cards">
+            <div class="img">
+                <img src="<%= produtos[2][index] %>" alt="foto do produto">
+                <div>Add to Cart</div>
+            </div>
+            <div class="descricao">
+                <h4 class="texto-cortado"><%= produtos[0][index] %></h4>
+                <p>$<%= produtos[1][index] %></p>
+            </div>
         </div>
-    </div>
-    <div class="cards">
-        <div class="img">
-            <img src="/img/Iphone.png" alt="">
-        </div>
-        <div class="descricao">
-            <h3>Nome</h3>
-            <p>$200.00</p>
+    <%}%>
 
-        </div>
-    </div>
-    <div class="cards">
-        <div class="img">
-            <img src="/img/Iphone.png" alt="">
-        </div>
-        <div class="descricao">
-            <h3>Nome</h3>
-            <p>$200.00</p>
-
-        </div>
-    </div>
+    
+  
    
 </section>
 
