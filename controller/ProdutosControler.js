@@ -1,5 +1,4 @@
 const getProdut = require('../api/api')
-// [ 'electronics', 'jewelery', "men's clothing", "women's clothing" ] categoria
 
 const showCategoria = async (req,res) => {
     let categoria = req.params.categoria
