@@ -1,35 +1,47 @@
 section {
     padding: 3rem 7rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 1rem;
 }
 .cards {
-    height: 15rem;
-    background-color: rgb(15, 250, 223);
-    border: 1px solid;
+    height: 300px;
     display: flex;
     flex-direction: column;
 }
 
 .cards .img{
-    background-color: red;
+    border: 1px solid;
     flex: 70%;
-}
-.cards .img div{
-    background-color: black;
-    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .cards .img img{
-    width: 200px;
+    width: 230px;
+    height: 170px;
 }
+.cards .card{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: .5rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+
+
 .cards .descricao{
-    background-color: rgb(143, 50, 50);
     flex: 30%;
-    
+    padding-top: 10px;
 }
 .cards .descricao .texto-cortado{
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    padding: 10px 0;
+}
+.cards .descricao p {
+    color: red;
 }
