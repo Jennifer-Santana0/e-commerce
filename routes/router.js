@@ -6,6 +6,6 @@ const Cart = require('../controller/CartController')
 
 routes.get('/',MainPage.mainPage)
 routes.get('/produtos/:categoria',Categoria.showCategoria)
-routes.get('/produtos/cart/:produto', Cart.cart)
+routes.get('/cart', Cart.cart)
 
 module.exports = routes
