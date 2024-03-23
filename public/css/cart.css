@@ -21,7 +21,21 @@ section span:nth-of-type(1), section span:nth-of-type(2){
     margin-bottom: 3rem;
     border-radius: 5px;
 }
-
+.cart-child input{
+    width: 30%;
+}
+.cart-child div{
+    flex: 20%;
+}
+.cart-child div p{
+    display: inline;
+}
+.cart-child div:nth-child(2),.cart-child div:nth-child(3){
+    text-align: center;
+}
+.cart-child div:nth-child(4){
+    text-align: end;
+}
 .cart-btn{
     width: 100%;
     display: flex;
