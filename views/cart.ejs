@@ -1,27 +1,37 @@
-<link rel="stylesheet" href="/css/cart.css">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce</title>
+    <link rel="stylesheet" href="/css/cart.css">
+</head>
+<body>
 
-<%- include("./components/header") %>
-
-
-<section>
-    <p>
-        <span>Home</span>
-        <span>/</span>
-        <span>Cart</span>
-    </p>
-
-    <div id="cart">
-        <div class="cart-child">
-            <p>Product</p>
-            <p>Price</p>
-            <p>Quantity</p>
-            <p>Subtotal</p>
+    <%- include("./components/header") %>
+    
+    <section>
+        <p>
+            <span>Home</span>
+            <span>/</span>
+            <span>Cart</span>
+        </p>
+    
+        <div id="cart">
+            <div class="cart-child">
+                <p>Product</p>
+                <p>Price</p>
+                <p>Quantity</p>
+                <p>Subtotal</p>
+            </div>
+            
+            <div class="cart-btn">
+                <button>Return To Shop</button>
+                <button>Update Cart</button>
+            </div>
         </div>
-        
-        <div class="cart-btn">
-            <button>Return To Shop</button>
-            <button>Update Cart</button>
-        </div>
-    </div>
+    
+    </section>
 
-</section>
+</body>
+</html>
