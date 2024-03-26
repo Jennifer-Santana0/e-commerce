@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 100;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+#form{
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    padding: 20px;
+    border-radius: 10px;
+    width: 25%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    margin-top: 1.5rem;
+}
+form div{
+    position: relative;
+}
+form div input{
+    outline: none;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px;
+}
+
+form div label{
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+}
+
+form div input:focus{
+     border-bottom: 1px solid cornflowerblue;
+}
+
+form div input:focus ~ label{
+    transform: translateY(-30px);
+    font-size: 15px;
+    color: cornflowerblue;
+    transition: .5s;
+}
+button{
+    background-color: rgb(229,68,68);
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+p:last-child{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 3px;
+}
