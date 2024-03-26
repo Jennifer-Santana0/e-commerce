@@ -1,5 +1,5 @@
-const cadastro = (req,res) => {
-    res.render('cadastro')
+const singup = (req,res) => {
+    res.render('singup')
 }
 
 const login = (req,res) => {
@@ -7,6 +7,6 @@ const login = (req,res) => {
 }
 
 module.exports = {
-    cadastro,
+    singup,
     login
 }

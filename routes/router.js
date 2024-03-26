@@ -1,15 +1,15 @@
 const express = require('express')
 const routes = express.Router()
-const Cadastro = require('../controller/CadastroContoller')
-const MainPage = require('../controller/MainPageController')
-const Categoria = require('../controller/ProdutosControler')
-const Cart = require('../controller/CartController')
+const SingUpConroller = require('../controller/SingUpContoller')
+const MainPageConroller = require('../controller/MainPageController')
+const CategoryConroller = require('../controller/ProductsControler')
+const CartConroller = require('../controller/CartController')
 
-routes.get('/',Cadastro.cadastro)
-routes.get('/login',Cadastro.login)
+routes.get('/',SingUpConroller.login)
+routes.get('/singup',SingUpConroller.singup)
 
-routes.get('/index',MainPage.mainPage)
-routes.get('/produtos/:categoria',Categoria.showCategoria)
-routes.get('/cart', Cart.cart)
+routes.get('/index',MainPageConroller.mainPage)
+routes.get('/products/:categoria',CategoryConroller.showCategory)
+routes.get('/cart', CartConroller.cart)
 
 module.exports = routes

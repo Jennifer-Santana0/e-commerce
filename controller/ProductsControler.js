@@ -1,22 +1,22 @@
 const getProdut = require('../api/api')
 
 
-const showCategoria = async (req,res) => {
+const showCategory = async (req,res) => {
     let categoria = req.params.categoria
     let validacao_user = true
 
     if(categoria == 'electronics'){
         const produtos = await getProdut(req.params.categoria)
-        res.render('./produtos', {validacao_user,produtos})
+        res.render('./products', {validacao_user,produtos})
     }else if (categoria == 'jewelery'){
         const produtos = await getProdut(req.params.categoria)
-        res.render('./produtos', {validacao_user,produtos})
+        res.render('./products', {validacao_user,produtos})
     }else if (categoria == "men's clothing"){
         const produtos = await getProdut(req.params.categoria)
-        res.render('./produtos', {validacao_user,produtos})
+        res.render('./products', {validacao_user,produtos})
     }else if (categoria == "women's clothing"){
         const produtos = await getProdut(req.params.categoria)
-        res.render('./produtos', {validacao_user,produtos})
+        res.render('./products', {validacao_user,produtos})
     } else {
         validacao_user = false
         let type_list = ['electronics','jewelery',"men's clothing","women's clothing"]
@@ -27,6 +27,6 @@ const showCategoria = async (req,res) => {
 
 
 module.exports = {
-    showCategoria,
+    showCategory,
 }
 

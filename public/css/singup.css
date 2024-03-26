@@ -10,7 +10,9 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-color: #f6f3f3;
 }
+
 #form{
     border: 1px solid;
     display: flex;
@@ -18,7 +20,9 @@ body{
     gap: .5rem;
     padding: 20px;
     border-radius: 10px;
-    width: 25%;
+    min-width: 25%;
+    background-color: white;
+    
 }
 form{
     display: flex;
@@ -65,6 +69,7 @@ button{
     color: white;
     cursor: pointer;
     font-size: 16px;
+    background-color: rgb(240, 112, 108);
 }
 p:last-child{
     text-align: center;
