@@ -11,8 +11,12 @@ routes.get('/singup',SingUpConroller.singup)
 routes.post('/check/singup',SingUpConroller.checkSingup)
 routes.post('/check/login',SingUpConroller.checkLogin)
 
-routes.get('/index',MainPageConroller.mainPage)
-routes.get('/index/products/:categoria',CategoryConroller.showCategory)
-routes.get('/index/cart', CartConroller.cart)
+routes.get('/index/:id_user',MainPageConroller.mainPage)
+
+routes.get('/index/:id_user/products/:categoria',CategoryConroller.showCategory)
+routes.get('/index/:id_user/cart', CartConroller.cart)
+
+
+
 
 module.exports = routes

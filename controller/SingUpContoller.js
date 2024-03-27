@@ -13,7 +13,10 @@ const checkSingup = (req,res) =>{
             let validacao_user = false
             let type_list = ['electronics','jewelery',"men's clothing","women's clothing"]
             await User.create(req.body)
-            res.render('index', {type_list,validacao_user})
+            User.findOne({email:req.body.email}).then((user2)=>{
+                let id_user = user2._id
+                res.render('index', {type_list,validacao_user,id_user})
+            })
         }
     })
 }
@@ -27,7 +30,8 @@ const checkLogin = (req,res) => {
         if(user && user.password == req.body.password){
             let validacao_user = false
             let type_list = ['electronics','jewelery',"men's clothing","women's clothing"]
-            res.render('index', {type_list,validacao_user})
+            let id_user = user._id
+            res.render('index', {type_list,validacao_user,id_user})
         }else {
             console.log('Este email nao existe.')
             res.render('login')
