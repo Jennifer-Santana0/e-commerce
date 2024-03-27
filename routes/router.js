@@ -8,6 +8,8 @@ const CartConroller = require('../controller/CartController')
 routes.get('/',SingUpConroller.login)
 routes.get('/singup',SingUpConroller.singup)
 
+routes.post('/check/singup',SingUpConroller.checkSingup)
+
 routes.get('/index',MainPageConroller.mainPage)
 routes.get('/index/products/:categoria',CategoryConroller.showCategory)
 routes.get('/index/cart', CartConroller.cart)

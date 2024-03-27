@@ -52,13 +52,13 @@ form div label{
 }
 
 form div input:focus{
-     border-bottom: 1px solid cornflowerblue;
+     border-bottom: 1px solid rgb(229,68,68);
 }
 
 form div input:focus ~ label{
     transform: translateY(-30px);
     font-size: 15px;
-    color: cornflowerblue;
+    color: rgb(229,68,68);
     transition: .5s;
 }
 button{
