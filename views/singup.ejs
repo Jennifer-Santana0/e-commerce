@@ -12,19 +12,19 @@
         <p>Enter your details below</p>
 
         <form action="/check/singup" method="post">
-            <div class="forms">
-                <input type="text" name="name">
-                <label for="nome">Username</label>
+            <div class="single-input">
+                <input type="text" class="input" required name="name">
+                <label for="name">Name</label>
             </div>
            
-            <div class="forms">
-                <input type="email" name="email">
+            <div class="single-input">
+                <input type="text" class="input" required name="email">
                 <label for="email">Email</label>
             </div>
 
-            <div class="forms">
-                <input type="password" name="password">
-                <label for="senha">Password</label>
+            <div class="single-input">
+                <input type="password" class="input" required name="password">
+                <label for="password">Password</label>
             </div>
 
             <button>Create Account</button>

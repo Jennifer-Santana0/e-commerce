@@ -24,58 +24,47 @@ body{
     background-color: white;
     
 }
-form{
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    position: relative;
-    margin-top: 1.5rem;
-}
-form div{
-    position: relative;
-}
-form div input{
-    outline: none;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    border-bottom: 1px solid;
+div.single-input{
     width: 100%;
-    cursor: pointer;
-    padding: 10px;
+    margin: 30px 0;
+    position: relative;
 }
-
-form div label{
+div.single-input label{
+    font-size: 16px;
     position: absolute;
-    left: 5px;
+    left: 0;
     bottom: 5px;
+    color: rgb(150, 150, 150);
+    transition: .5s ease-in-out;
+}
+div.single-input .input{
+    width: 100%;
+    padding: 5px;
+    border: 0;
+    border-bottom: 2px solid rgb(200, 200, 200);
+    outline: none;
+    font-size: 16px;
+}
+div.single-input .input:focus,div.single-input .input:valid{
+    border-bottom: 2px solid rgb(229,68,68);
 }
 
-form div input:focus{
-     border-bottom: 1px solid rgb(229,68,68);
-}
-
-form div input:focus ~ label{
-    transform: translateY(-30px);
-    font-size: 15px;
+div.single-input .input:focus ~ label,
+div.single-input .input:valid ~ label{
+    transform: translateY(-24px);
+    font-size: 12px;
     color: rgb(229,68,68);
-    transition: .5s;
 }
+
 button{
+    width: 100%;
     background-color: rgb(229,68,68);
     padding: 10px;
     border-radius: 5px;
-    border: none;
-    color: white;
-    cursor: pointer;
     font-size: 16px;
-    background-color: rgb(240, 112, 108);
+    border: none;
+    margin-bottom: 15px;
 }
 p:last-child{
     text-align: center;
-}
-a{
-    text-decoration: none;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 3px;
 }
