@@ -9,6 +9,7 @@ routes.get('/',SingUpConroller.login)
 routes.get('/singup',SingUpConroller.singup)
 
 routes.post('/check/singup',SingUpConroller.checkSingup)
+routes.post('/check/login',SingUpConroller.checkLogin)
 
 routes.get('/index',MainPageConroller.mainPage)
 routes.get('/index/products/:categoria',CategoryConroller.showCategory)
