@@ -20,7 +20,9 @@
                     <img src="<%= produtos[2][index] %>" alt="foto do produto">
                 </div>
                 
-                <a href="/index/cart/<%=id_user%>/<%= produtos[0][index] %>/<%= produtos[1][index] %>"> <div class="cart">Add Cart</div> </a>
+                <form action="/index/cart/<%= id_user %>/<%= produtos[0][index] %>/<%= produtos[1][index] %>" method="post">
+                    <button class="addToCartButton">Add Cart</button>
+                </form>
                 
 
                 <div class="descricao">

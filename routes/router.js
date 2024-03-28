@@ -15,7 +15,7 @@ routes.get('/index/:id_user',MainPageConroller.mainPage)
 
 routes.get('/index/:id_user/products/:categoria',CategoryConroller.showCategory)
 
-routes.get('/index/cart/:product_id/:product_name/:product_price', CartConroller.cartAdd)
+routes.post('/index/cart/:product_id/:product_name/:product_price', CartConroller.cartAdd)
 routes.get('/index/:id_user/cart', CartConroller.cart)
 
 

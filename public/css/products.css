@@ -21,17 +21,14 @@ section {
     width: 230px;
     height: 170px;
 }
-.cards .cart{
+.cards .addToCartButton{
     background-color: black;
     color: white;
     text-align: center;
     padding: .5rem;
     width: 100%;
     cursor: pointer;
-}
-.cards a{
-    color: white;
-    text-decoration: none;
+    border: none;
 }
 .cards .descricao{
     flex: 30%;

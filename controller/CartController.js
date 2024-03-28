@@ -1,12 +1,12 @@
 const Cart = require('../models/Cart')
 
 const cartAdd = async (req,res) => {
-    try {
-        await Cart.create(req.params);
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Erro ao adicionar produto ao carrinho');
-    }
+   try{
+        Cart.create(req.params)
+        console.log('cadastrou')
+   }catch(err){
+        console.log('Houve um erro.')
+   }
 }
 
 const cart = (req,res) => {
