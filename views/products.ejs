@@ -19,9 +19,10 @@
                 <div class="img">
                     <img src="<%= produtos[2][index] %>" alt="foto do produto">
                 </div>
-    
-                <div class="cart">Add to Cart</div>
-    
+                
+                <a href="/index/cart/<%=id_user%>/<%= produtos[0][index] %>/<%= produtos[1][index] %>"> <div class="cart">Add Cart</div> </a>
+                
+
                 <div class="descricao">
                     <h5 class="texto-cortado"><%= produtos[0][index] %></h5>
                     <p>$<%= produtos[1][index] %></p>
@@ -31,6 +32,8 @@
        
     </section>
 
+
+    <script src="/js/main.js"></script>
 </body>
 </html>
 

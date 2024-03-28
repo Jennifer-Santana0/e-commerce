@@ -33,7 +33,6 @@ section span:nth-of-type(1), section span:nth-of-type(2){
 }
 .cart-child input{
     width: 30%;
-    font-size: 20px;
     padding: 5px;
 }
 .content{

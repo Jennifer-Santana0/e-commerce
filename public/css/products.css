@@ -29,6 +29,10 @@ section {
     width: 100%;
     cursor: pointer;
 }
+.cards a{
+    color: white;
+    text-decoration: none;
+}
 .cards .descricao{
     flex: 30%;
     padding-top: 10px;
