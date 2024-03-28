@@ -29,9 +29,6 @@ section {
     width: 100%;
     cursor: pointer;
 }
-
-
-
 .cards .descricao{
     flex: 30%;
     padding-top: 10px;
