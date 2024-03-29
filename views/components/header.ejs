@@ -18,7 +18,11 @@
             <h1>Exclusive</h1>
             <nav>
                 <ul>
-                    <li><a href="/index/<%=id_user%>">Home</a></li>
+                    <li>
+                        <form action="/index/<%=id_user%>" method="post">
+                            <button>Home</button>
+                        </form>
+                    </li>
                     <li><a href="#">Contact</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="/singup">Sign Up</a></li>
@@ -31,7 +35,9 @@
                 </form>
                 <i class="bi bi-heart"></i>
                 
-                <a href="/index/<%=id_user%>/cart"><i class="bi bi-cart3"></i></a>
+                <form id="cart" action="/index/<%=id_user%>/cart" method="post">
+                    <button><i class="bi bi-cart3"></i></button>
+                </form>
                 
                 <% if(validacao_user == true){%>
                     <i class="bi bi-person-circle"></i>

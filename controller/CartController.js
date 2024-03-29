@@ -21,6 +21,7 @@ const cart = async (req,res) => {
     let id_user = req.params.id_user
     try{
         await Cart.find({product_id:req.params.id_user}).then((produto)=>{
+            produto.reverse()
             res.render('cart', {validacao_user,id_user,produto})
         }).catch((err)=>{
             console.log('Houve algum erro!')

@@ -17,7 +17,7 @@ const add_cart_f = (data) => {
     xhr.onerror = () => {
         console.error('Erro ao adicionar produto ao carrinhohhhhh:', xhr.statusText);
     }
-    xhr.send(JSON.stringify(data))
+    xhr.send()
 }
 
 add_cart.forEach((el)=>{

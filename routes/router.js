@@ -11,12 +11,12 @@ routes.get('/singup',SingUpConroller.singup)
 routes.post('/check/singup',SingUpConroller.checkSingup)
 routes.post('/check/login',SingUpConroller.checkLogin)
 
-routes.get('/index/:id_user',MainPageConroller.mainPage)
+routes.post('/index/:id_user',MainPageConroller.mainPage)
 
 routes.get('/index/:id_user/products/:categoria',CategoryConroller.showCategory)
 
 routes.post('/index/cart/:product_id/:product_name/:product_price/:product_img1/:product_img2/:product_img3/:product_img4', CartConroller.cartAdd)
-routes.get('/index/:id_user/cart', CartConroller.cart)
+routes.post('/index/:id_user/cart', CartConroller.cart)
 
 routes.post('/teste/:nome',(req,res)=>{
     console.log(req.params)

@@ -43,6 +43,12 @@ i{
 #header-2 nav ul li{
     padding: 0 .5rem;
 }
+#header-2 nav li form button{
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
 #header-2 ul li a{
     color: black;
     text-decoration: none;
@@ -53,6 +59,14 @@ i{
     border-radius: 5px;
     display: inline;
 }
+#header-2 div #cart{
+    border: none;
+    background-color: white;
+}
+#header-2 div #cart button{
+    border: none;
+    background-color: white;
+} 
 #header-2 div input{
     background-color: var(--gray);
     border: none;
