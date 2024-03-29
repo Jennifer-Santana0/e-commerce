@@ -9,6 +9,8 @@
 <body>
 
     <%- include("./components/header") %>
+    
+
 
     <section>
         <p>
@@ -25,24 +27,23 @@
                 <div><p>Subtotal</p></div>
             </div>
 
-            <div class="cart-child">
-                <div class="content"><img src="https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg" alt="foto"><p>Notbook</p></div>
-                <div><p>399</p></div>
-                <div><input type="number" min="1" value="1"></div>
-                <div><p>valor total</p></div>
-            </div>
-            <div class="cart-child">
-                <div class="content"><img src="https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg" alt="foto"><p>Notbook</p></div>
-                <div><p>399</p></div>
-                <div><input type="number" min="1" value="1"></div>
-                <div><p>valor total</p></div>
-            </div>
-            <div class="cart-child">
-                <div class="content"><img src="https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg" alt="foto"><p>Notbook</p></div>
-                <div><p>399</p></div>
-                <div><input type="number" min="1" value="1"></div>
-                <div><p>valor total</p></div>
-            </div>
+            
+            <%if(produto.length===0){%>
+                <h1>Nao ha produtos</h1>
+            <%}else{%>
+        
+                <%for (let index = 0; index < produto.length; index++) {%>
+                    <div class="cart-child">
+                        <div class="content"><img src="<%= produto[index].product_img %>" alt="foto"><p><%= produto[index].product_name %></p></div>
+                        <div><p>$<%= produto[index].product_price %></p></div>
+                        <div><input type="number" min="1" value="1"></div>
+                        <div><p>valor total</p></div>
+                    </div>
+                <%}%>
+        
+            <%}%>
+           
+
             
             <div class="cart-btn">
                 <button>Return To Shop</button>

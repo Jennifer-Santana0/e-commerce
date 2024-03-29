@@ -10,17 +10,18 @@
     
     <%- include ('./components/header')%>
 
+    
     <section>
 
+        
         <%for (let index = 0; index < produtos[0].length; index++) {%>
-    
             <div class="cards">
     
                 <div class="img">
                     <img src="<%= produtos[2][index] %>" alt="foto do produto">
                 </div>
                 
-                <form action="/index/cart/<%= id_user %>/<%= produtos[0][index] %>/<%= produtos[1][index] %>" method="post">
+                <form action="/index/cart/<%= id_user %>/<%= produtos[0][index] %>/<%= produtos[1][index] %>/<%=produtos[2][index]%>" method="post">
                     <button class="addToCartButton">Add Cart</button>
                 </form>
                 

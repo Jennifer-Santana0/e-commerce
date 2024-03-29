@@ -10,6 +10,10 @@ const Cart = new mongoose.Schema({
         type: String,
         require: true
     },
+    product_img: {
+        type: String,
+        require: true
+    },
     product_id: {
         type: String,
         require: true
