@@ -9,8 +9,17 @@ const cartAdd = async (req,res) => {
             product_img: product_img,
             product_id: req.params.product_id
        }
-       console.log('cadastrou')
-       Cart.create(cartData)
+
+       await Cart.findOne({product_name:cartData.product_name}).then((product)=>{
+            if(product){
+                console.log('Esse produto ja foi adicionado no cart.')
+            }else {
+                console.log('Adicionando o produto ao cart.')
+                Cart.create(cartData)
+            }
+       }) 
+
+      
    }catch(err){
         console.log('Houve um erro.')
    }
