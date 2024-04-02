@@ -35,9 +35,9 @@
                 <%for (let index = 0; index < produto.length; index++) {%>
                     <div class="cart-child">
                         <div class="content"><img src="<%= produto[index].product_img %>" alt="foto"><p><%= produto[index].product_name %></p></div>
-                        <div><p>$<%= produto[index].product_price %></p></div>
-                        <div><input type="number" min="1" value="1"></div>
-                        <div><p>valor total</p></div>
+                        <div><p class="price">$<%= produto[index].product_price %></p></div>
+                        <div><input class="quantity" type="number" min="1" value="1"></div>
+                        <div><p class="total_price">valor total</p></div>
                     </div>
                 <%}%>
         
@@ -53,5 +53,6 @@
     
     </section>
 
+    <script src="/js/main.js"></script>
 </body>
 </html>

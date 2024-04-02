@@ -1,6 +1,5 @@
 const add_cart = document.querySelectorAll('.addToCartButton')
 
-
 const add_cart_f = (data) => {
     let xhr = new XMLHttpRequest()
     xhr.open('POST','/index/cart/'+data.product_id+'/'+data.product_name+'/'+data.product_price+'/'+data.product_img1+'/'+data.product_img2+'/'+data.product_img3+'/'+data.product_img4)
@@ -20,9 +19,18 @@ const add_cart_f = (data) => {
     xhr.send()
 }
 
+
+
+
 add_cart.forEach((el)=>{
     el.addEventListener('click',(event)=>{
         event.preventDefault()
+
+        el.style.zIndex = -1
+
+        setTimeout(()=>{
+            el.style.zIndex = 1
+        },2000)
         
         let form = el.closest('form')
         let rota = form.getAttribute('action')
@@ -71,4 +79,30 @@ add_cart.forEach((el)=>{
         
     })
 })
+
+const quantity = document.querySelectorAll('.quantity')
+const price = document.querySelectorAll('.price')
+const total_price = document.querySelectorAll('.total_price')
+
+
+
+
+// quantity.forEach((el,index_quantity)=>{
+//     el.addEventListener('input',function(){
+//         const quantity_value = parseFloat(this.value) 
+
+
+//         price.forEach((el,index_value) => {
+//             const priceText = el.innerHTML;
+//             const priceValue = parseFloat(priceText.substring(1))
+//             if (typeof quantity_value === NaN){
+//                 total_price[index_quantity].innerHTML = "$0"
+//             } else if(index_value == index_quantity){
+//                 total_price[index_quantity].innerHTML = "$" + priceValue * quantity_value
+//             }
+//         });
+
+//     })
+// })
+
 
