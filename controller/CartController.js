@@ -43,20 +43,32 @@ const cart = async (req,res) => {
 
 const cartEdit = async (req,res) => {
     const newValue =  parseFloat(req.params.newValue)
-    const valueName =  req.params.newValue
+    const valueName =  req.params.valueName
     
     try{
-        await Cart.updateOne({product_img:valueName},{product_quantity:newValue}).then(()=>{
-            console.log('certp')
+        await Cart.updateOne({product_name:valueName}, {product_quantity:newValue}).then(()=>{
+            console.log('Atualizando a quantidade de produtos no cart.')
         }).catch((err)=>{
-            console.log('dei errado')
+            console.log('Erro ao alterar a quantidade de produtos no cart.')
         })
     }catch(err){
-        console.log(err)
+        console.log('esta dando algum erro!')
     }
     
 
 }
+
+// Categoria.findOne({_id: req.body.id}).then((categoria)=>{
+//     categoria.nome = req.body.nome
+//     categoria.slug = req.body.slug
+
+//     categoria.save().then(()=>{
+//         req.flash('success_msg','Categoria editada com sucesso')
+//         res.redirect('/admin/categorias')
+//     }).catch((err)=>{
+//         req.flash('error_msg','Houve algum erro interno ao salvar a categoria')
+//         res.redirect('/admin/categorias')
+//     })
 
 module.exports = {
     cart,
