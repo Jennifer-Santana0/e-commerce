@@ -41,8 +41,26 @@ const cart = async (req,res) => {
     
 }
 
+const cartEdit = async (req,res) => {
+    const newValue =  parseFloat(req.params.newValue)
+    const valueName =  req.params.newValue
+    
+    try{
+        await Cart.updateOne({product_img:valueName},{product_quantity:newValue}).then(()=>{
+            console.log('certp')
+        }).catch((err)=>{
+            console.log('dei errado')
+        })
+    }catch(err){
+        console.log(err)
+    }
+    
+
+}
+
 module.exports = {
     cart,
-    cartAdd
+    cartAdd,
+    cartEdit
 }
 

@@ -84,25 +84,33 @@ const quantity = document.querySelectorAll('.quantity')
 const price = document.querySelectorAll('.price')
 const total_price = document.querySelectorAll('.total_price')
 
+quantity.forEach((el) => {
+    el.addEventListener('input', function () {
+        const valueName = el.parentNode.parentNode.querySelector('.content p').innerHTML
+        const newQuantity = parseFloat(this.value);
+        console.log('Novo valor: '+newQuantity)
+        console.log('Nome: '+valueName)
+        
+
+        let xhr = new XMLHttpRequest()
+        xhr.open('POST','/index/cartedit/'+newQuantity+'/'+valueName)
+    
+        xhr.setRequestHeader('Content-type', 'application/json')
+    
+        xhr.onload = () => {
+            if(xhr.status === 200){
+                console.log('Qhuantidade do produto enviada com sucesso');
+            } else {
+                console.error('Erro:', xhr.statusText);
+            }
+        }
+        xhr.onerror = () => {
+            console.error('Erro mais:', xhr.statusText);
+        }
+        xhr.send()
+
+    });
+});
 
 
-
-// quantity.forEach((el,index_quantity)=>{
-//     el.addEventListener('input',function(){
-//         const quantity_value = parseFloat(this.value) 
-
-
-//         price.forEach((el,index_value) => {
-//             const priceText = el.innerHTML;
-//             const priceValue = parseFloat(priceText.substring(1))
-//             if (typeof quantity_value === NaN){
-//                 total_price[index_quantity].innerHTML = "$0"
-//             } else if(index_value == index_quantity){
-//                 total_price[index_quantity].innerHTML = "$" + priceValue * quantity_value
-//             }
-//         });
-
-//     })
-// })
-
-
+  
