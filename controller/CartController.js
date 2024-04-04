@@ -54,21 +54,17 @@ const cart = async (req,res) => {
 const cartEdit = async (req,res) => {
     const newQuantity =  parseFloat(req.params.newQuantity)
     const valueName =  req.params.valueName
+   
      
-    
+    await Cart.findOne({product_name:valueName}).then(async(produto)=>{
+        const priceQuantity = newQuantity * produto.product_price 
+        await Cart.updateOne({product_name:valueName}, {product_quantity:newQuantity, product_total_price:priceQuantity})
+        
+        
 
-    // try{
-    //     await Cart.updateOne({product_name:valueName}, {product_quantity:newQuantity, product_price:newPrice}).then(()=>{
-    //         console.log('Atualizando a quantidade de produtos no cart.')
-
-    //     }).catch((err)=>{
-    //         console.log('Erro ao alterar a quantidade de produtos no cart.')
-    //     })
-    // }catch(err){
-    //     console.log('esta dando algum erro!')
-    // }
-    
-
+        }).catch((err)=>{
+        console.log('Houve algum erro: '+err)
+    })
 }
 
 

@@ -7,7 +7,7 @@ const Cart = new mongoose.Schema({
         require: true
     },
     product_price: {
-        type: String,
+        type: Number,
         require: true
     },
     product_img: {
@@ -18,7 +18,7 @@ const Cart = new mongoose.Schema({
         type: Number,
         default: 1
     },
-    product_normal_price: {
+    product_total_price: {
         type: Number,
         default: 0
     },
