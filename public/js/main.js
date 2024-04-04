@@ -81,15 +81,16 @@ add_cart.forEach((el)=>{
 })
 
 const quantity = document.querySelectorAll('.quantity')
-const price = document.querySelectorAll('.price')
 const total_price = document.querySelectorAll('.total_price')
 
 quantity.forEach((el) => {
     el.addEventListener('input', function () {
         const valueName = el.parentNode.parentNode.querySelector('.content p').innerHTML
         const newQuantity = parseFloat(this.value);
+
         console.log('Novo valor: '+newQuantity)
         console.log('Nome: '+valueName)
+       
         
 
         let xhr = new XMLHttpRequest()

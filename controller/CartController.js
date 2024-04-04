@@ -14,12 +14,20 @@ const cartAdd = async (req,res) => {
             if(product){
                 console.log('Esse produto ja foi adicionado no cart.')
             }else {
-                console.log('Adicionando o produto ao cart.')
-                Cart.create(cartData)
+                Cart.create(cartData).then((produto)=>{
+                    Cart.updateOne({product_name:cartData.product_name}, {product_normal_price:cartData.product_price}).then(()=>{
+                        console.log('o preco normal ja foi adiconado')
+                    }).catch((err)=>{
+                        console.log('o preco nnormal nao foi adiconado')
+                    })
+                    
+                }).catch((err)=>{
+                    console.log('Houve algum erro ao cadastrar.')
+                })
+                
             }
        }) 
 
-      
    }catch(err){
         console.log('Houve um erro.')
    }
@@ -38,37 +46,32 @@ const cart = async (req,res) => {
     }catch(err){
         console.log('Houve algum erro!')
     }
-    
+
 }
+
+
 
 const cartEdit = async (req,res) => {
-    const newValue =  parseFloat(req.params.newValue)
+    const newQuantity =  parseFloat(req.params.newQuantity)
     const valueName =  req.params.valueName
+     
     
-    try{
-        await Cart.updateOne({product_name:valueName}, {product_quantity:newValue}).then(()=>{
-            console.log('Atualizando a quantidade de produtos no cart.')
-        }).catch((err)=>{
-            console.log('Erro ao alterar a quantidade de produtos no cart.')
-        })
-    }catch(err){
-        console.log('esta dando algum erro!')
-    }
+
+    // try{
+    //     await Cart.updateOne({product_name:valueName}, {product_quantity:newQuantity, product_price:newPrice}).then(()=>{
+    //         console.log('Atualizando a quantidade de produtos no cart.')
+
+    //     }).catch((err)=>{
+    //         console.log('Erro ao alterar a quantidade de produtos no cart.')
+    //     })
+    // }catch(err){
+    //     console.log('esta dando algum erro!')
+    // }
     
 
 }
 
-// Categoria.findOne({_id: req.body.id}).then((categoria)=>{
-//     categoria.nome = req.body.nome
-//     categoria.slug = req.body.slug
 
-//     categoria.save().then(()=>{
-//         req.flash('success_msg','Categoria editada com sucesso')
-//         res.redirect('/admin/categorias')
-//     }).catch((err)=>{
-//         req.flash('error_msg','Houve algum erro interno ao salvar a categoria')
-//         res.redirect('/admin/categorias')
-//     })
 
 module.exports = {
     cart,

@@ -18,6 +18,10 @@ const Cart = new mongoose.Schema({
         type: Number,
         default: 1
     },
+    product_normal_price: {
+        type: Number,
+        default: 0
+    },
     product_id: {
         type: String,
         require: true
