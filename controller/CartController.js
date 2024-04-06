@@ -14,7 +14,7 @@ const cartAdd = async (req,res) => {
             if(product){
                 console.log('Esse produto ja foi adicionado no cart.')
             }else {
-                Cart.create(cartData).then((produto)=>{
+                Cart.create(cartData).then(()=>{
                     Cart.updateOne({product_name:cartData.product_name}, {product_normal_price:cartData.product_price}).then(()=>{
                         console.log('o preco normal ja foi adiconado')
                     }).catch((err)=>{
@@ -51,21 +51,31 @@ const cart = async (req,res) => {
 
 
 
-const cartEdit = async (req,res) => {
-    const newQuantity =  parseFloat(req.params.newQuantity)
-    const valueName =  req.params.valueName
-   
-     
-    await Cart.findOne({product_name:valueName}).then(async(produto)=>{
-        const priceQuantity = newQuantity * produto.product_price 
-        await Cart.updateOne({product_name:valueName}, {product_quantity:newQuantity, product_total_price:priceQuantity})
-        
-        
 
-        }).catch((err)=>{
-        console.log('Houve algum erro: '+err)
-    })
-}
+
+const cartEdit = async (req, res) => {
+    const newQuantity = parseFloat(req.params.newQuantity);
+    const valueName = req.params.valueName;
+
+    try {
+        const produto = await Cart.findOne({ product_name: valueName });
+        if (!produto) {
+            throw new Error('Produto não encontrado.');
+        }
+
+        const priceQuantity = newQuantity * produto.product_price;
+        await Cart.updateOne(
+            { product_name: valueName },
+            { product_quantity: newQuantity, product_total_price: priceQuantity }
+        );
+
+        // Retorna o novo preço total como resposta
+        res.status(200).json({ newTotalPrice: priceQuantity });
+    } catch (err) {
+        console.log('Houve algum erro:', err);
+        res.status(500).json({ error: 'Erro ao atualizar a quantidade do produto.' });
+    }
+};
 
 
 

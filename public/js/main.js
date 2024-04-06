@@ -98,16 +98,20 @@ quantity.forEach((el) => {
     
         xhr.setRequestHeader('Content-type', 'application/json')
     
+
         xhr.onload = () => {
-            if(xhr.status === 200){
-                console.log('Qhuantidade do produto enviada com sucesso');
+            if (xhr.status === 200) {
+                const response = JSON.parse(xhr.responseText);
+                const newTotalPrice = response.newTotalPrice;
+        
+                // Encontra o elemento na página que precisa ser atualizado
+                const precoTotalElement = el.parentNode.parentNode.querySelector('.preco_total');
+                precoTotalElement.textContent = '$' + newTotalPrice.toFixed(2); // Atualiza o valor na página
             } else {
                 console.error('Erro:', xhr.statusText);
             }
-        }
-        xhr.onerror = () => {
-            console.error('Erro mais:', xhr.statusText);
-        }
+        };
+
         xhr.send()
 
     });
