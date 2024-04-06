@@ -80,6 +80,21 @@ add_cart.forEach((el)=>{
     })
 })
 
+
+let total = 0
+
+const price_total = document.querySelectorAll('.price_total')
+price_total.forEach((el)=>{
+    let valores = parseFloat(el.innerHTML.replace('$', ''))
+    total = total + valores
+})
+
+const sub_total = document.querySelectorAll('.sub_total')
+sub_total.forEach((el)=>{
+    el.innerHTML = '$' + total.toFixed(2)
+})
+
+
 const quantity = document.querySelectorAll('.quantity')
 
 quantity.forEach((el) => {
@@ -104,9 +119,25 @@ quantity.forEach((el) => {
                 const response = JSON.parse(xhr.responseText);
                 const newTotalPrice = response.newTotalPrice;
         
-                // Encontra o elemento na página que precisa ser atualizado
-                const precoTotalElement = el.parentNode.parentNode.querySelector('.preco_total');
-                precoTotalElement.textContent = '$' + newTotalPrice.toFixed(2); // Atualiza o valor na página
+                
+                const precoTotalElement = el.parentNode.parentNode.querySelector('.price_total');
+                precoTotalElement.textContent = '$' + newTotalPrice.toFixed(2);
+
+
+                let total = 0
+
+                const price_total = document.querySelectorAll('.price_total')
+                price_total.forEach((el)=>{
+                    let valores = parseFloat(el.innerHTML.replace('$', ''))
+                    total = total + valores
+                })
+
+                const sub_total = document.querySelectorAll('.sub_total')
+                sub_total.forEach((el)=>{
+                    el.innerHTML = '$' + total.toFixed(2)
+                })
+                                
+
             } else {
                 console.error('Erro:', xhr.statusText);
             }

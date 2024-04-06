@@ -53,20 +53,20 @@ const cart = async (req,res) => {
 
 
 
+
+
 const cartEdit = async (req, res) => {
     const newQuantity = parseFloat(req.params.newQuantity);
     const valueName = req.params.valueName;
 
     try {
         const produto = await Cart.findOne({ product_name: valueName });
-        if (!produto) {
-            throw new Error('Produto não encontrado.');
-        }
+        
 
         const priceQuantity = newQuantity * produto.product_price;
         await Cart.updateOne(
             { product_name: valueName },
-            { product_quantity: newQuantity, product_total_price: priceQuantity }
+            { product_quantity: newQuantity}
         );
 
         // Retorna o novo preço total como resposta

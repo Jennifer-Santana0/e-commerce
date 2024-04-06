@@ -35,9 +35,9 @@
                 <%for (let index = 0; index < produto.length; index++) {%>
                     <div class="cart-child">
                         <div class="content"><img src="<%= produto[index].product_img %>" alt="foto"><p><%= produto[index].product_name %></p></div>
-                        <div><p>$<%= produto[index].product_price %></p></div>
+                        <div><p>$<%= produto[index].product_price.toFixed(2)%></p></div>
                         <div><input class="quantity" type="number" min="1" value="<%= produto[index].product_quantity %>"></div>
-                        <div><p class="preco_total">$<%= produto[index].product_total_price %></p></div>
+                        <div><p class="price_total">$<%= (produto[index].product_price * produto[index].product_quantity).toFixed(2) %></p></div>
                     </div>
                 <%}%>
         
@@ -49,6 +49,36 @@
                 <button>Return To Shop</button>
                 <button>Update Cart</button>
             </div>
+        </div>
+
+        <div id="subPrice">
+            <div>
+                <input type="text" placeholder="Coupon Code">
+                <button class="btn_sub">Aplly Coupon</button>
+            </div>
+
+            <div>
+                <p id="CartTotal">Cart Total</p>
+                <div>
+                    <p>SubTotal</p>
+                    <p class="sub_total">$823</p>
+                </div>
+                <hr>
+                <div>
+                    <p>Sipping</p>
+                    <p>Free</p>
+                </div>
+                <hr>
+                <div>
+                    <p>Total</p>
+                    <p class="sub_total">$823</p>
+                </div>
+                <div id="div_btn">
+                    <button id="check" class="btn_sub">Procees to checkout</button>
+                </div>
+                
+            </div>
+
         </div>
     
     </section>
