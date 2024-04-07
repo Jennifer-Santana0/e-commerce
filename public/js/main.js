@@ -149,4 +149,98 @@ quantity.forEach((el) => {
 });
 
 
-  
+const campos = document.querySelectorAll('.input')
+const spans_error = document.querySelectorAll('.span-error')
+const form = document.querySelectorAll('.form')
+const btn_submit = document.querySelectorAll('.form button[type="submit"]')
+const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
+
+
+
+const setError = (index) =>{
+    spans_error[index].style.display = 'block'
+}
+
+const removeError = (index) =>{
+    spans_error[index].style.display = 'none'
+}
+
+
+campos.forEach((el,index)=>{
+    el.addEventListener('input',()=>{
+
+        if(el.classList.contains('name')){
+            if(el.value.length < 3){
+                setError(index)
+            }else {
+                removeError(index)
+            }
+        }
+
+
+        if(el.classList.contains('email')){
+            if(emailRegex.test(el.value)){
+                removeError(index)
+            }else {
+                setError(index)
+            }
+        }
+
+
+        if(el.classList.contains('password')){
+            if(el.value.length>=8){
+                removeError(index)
+            }else {
+                setError(index)
+            }
+        }
+
+    })
+})
+
+
+btn_submit.forEach((el)=>{
+    el.addEventListener('click',(event)=>{
+        
+        spans_error.forEach((el)=>{
+            if (el.style.display == 'block'){
+                console.log('ha algum erro')
+                event.preventDefault()
+            }
+        })
+
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const passwordValid = () =>{
+//     if(campos[1].value.length>=8){
+//         removeError(1)
+//     }else {
+//         setError(1)
+//     }
+// }

@@ -13,7 +13,7 @@ body{
     background-color: #f6f3f3;
 }
 
-#form{
+.form{
     border: 1px solid;
     display: flex;
     flex-direction: column;
@@ -67,4 +67,13 @@ button{
 }
 p:last-child{
     text-align: center;
+}
+
+.span-error{
+    color: red;
+    position: absolute;
+    left: 0;
+    bottom: -1.2rem;
+    font-size: 15px;
+    display: none;
 }

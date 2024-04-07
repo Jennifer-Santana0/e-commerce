@@ -7,30 +7,36 @@
     <link rel="stylesheet" href="/css/singup.css">
 </head>
 <body>
-    <div id="form">
+    <div class="form">
         <h1>Create an ccount</h1>
         <p>Enter your details below</p>
 
         <form action="/check/singup" method="post">
             <div class="single-input">
-                <input type="text" class="input" required name="name">
+                <input type="text" class="input name" required name="name">
                 <label for="name">Name</label>
+                <span class="span-error">Name must be at least 3 characters!</span>
             </div>
            
             <div class="single-input">
-                <input type="text" class="input" required name="email">
+                <input type="text" class="input email" required name="email">
                 <label for="email">Email</label>
+                <span class="span-error">The email must contain '@gmail.com'!</span>
+                
             </div>
 
             <div class="single-input">
-                <input type="password" class="input" required name="password">
+                <input type="password" class="input password" required name="password">
                 <label for="password">Password</label>
+                <span class="span-error">Password: minimum 8 characters!</span>
             </div>
 
-            <button>Create Account</button>
+            <button  type="submit">Create Account</button>
 
             <p>Already have account? <a href="/">Log in</a></p>
         </form>
     </div>
+
+    <script src="/js/main.js"></script>
 </body>
 </html>

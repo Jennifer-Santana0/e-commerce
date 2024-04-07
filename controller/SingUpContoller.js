@@ -12,6 +12,7 @@ const checkSingup = (req,res) =>{
         } else {
             let validacao_user = false
             let type_list = ['electronics','jewelery',"men's clothing","women's clothing"]
+            console.log('usuario cadastrado')
             await User.create(req.body)
             User.findOne({email:req.body.email}).then((user2)=>{
                 let id_user = user2._id
