@@ -4,23 +4,24 @@ const singup = (req,res) => {
     res.render('singup')
 }
 
-const checkSingup = (req,res) =>{
-    User.findOne({email:req.body.email}).then( async (user)=>{
-        if(user){
-            console.log('Este email já esta registrado!')
-            res.render('singup')
+const checkSingup = async (req, res) => {
+    try {
+        const existingUser = await User.findOne({ email: req.body.email });
+        if (existingUser) {
+            req.flash('error_msg', 'This email is already registered!');
+            res.redirect('/singup');
         } else {
-            let validacao_user = false
-            let type_list = ['electronics','jewelery',"men's clothing","women's clothing"]
-            console.log('usuario cadastrado')
-            await User.create(req.body)
-            User.findOne({email:req.body.email}).then((user2)=>{
-                let id_user = user2._id
-                res.render('index', {type_list,validacao_user,id_user})
-            })
+            await User.create(req.body);
+            const newUser = await User.findOne({ email: req.body.email });
+            const id_user = newUser._id;
+            res.render('index', { type_list, validacao_user: false, id_user, error_msg: false });
         }
-    })
-}
+    } catch (error) {
+        console.error('Erro durante o cadastro:', error);
+        req.flash('error_msg', 'Error during registration. Please try again!');
+        res.redirect('/singup');
+    }
+};
 
 const login = (req,res) => {
     res.render('login')
@@ -34,8 +35,8 @@ const checkLogin = (req,res) => {
             let id_user = user._id
             res.render('index', {type_list,validacao_user,id_user})
         }else {
-            console.log('Este email nao existe.')
-            res.render('login')
+            req.flash('error_msg', 'This email is not registered!');
+            res.redirect('/')
         }
     }).catch((err)=>{
         console.log('Houve algum erro.')

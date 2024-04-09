@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="/css/singup.css">
 </head>
 <body>
+
+    
+    <h3 class="error"><%= error_msg %></h3>
+
     <div class="form">
         <h1>Create an ccount</h1>
         <p>Enter your details below</p>
@@ -31,7 +35,7 @@
                 <span class="span-error">Password: minimum 8 characters!</span>
             </div>
 
-            <button  type="submit">Create Account</button>
+            <button type="submit">Create Account</button>
 
             <p>Already have account? <a href="/">Log in</a></p>
         </form>
