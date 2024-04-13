@@ -1,4 +1,4 @@
-const getProdut = require('../api/api')
+const api = require('../api/api')
 
 
 const showCategory = async (req,res) => {
@@ -7,16 +7,16 @@ const showCategory = async (req,res) => {
     let id_user = req.params.id_user
 
     if(categoria == 'electronics'){
-        const produtos = await getProdut(req.params.categoria)
+        const produtos = await api.getCategoriesProducts(req.params.categoria)
         res.render('./products', {validacao_user,produtos,id_user})
     }else if (categoria == 'jewelery'){
-        const produtos = await getProdut(req.params.categoria)
+        const produtos = await api.getCategoriesProducts(req.params.categoria)
         res.render('./products', {validacao_user,produtos,id_user})
     }else if (categoria == "men's clothing"){
-        const produtos = await getProdut(req.params.categoria)
+        const produtos = await api.getCategoriesProducts(req.params.categoria)
         res.render('./products', {validacao_user,produtos,id_user})
     }else if (categoria == "women's clothing"){
-        const produtos = await getProdut(req.params.categoria)
+        const produtos = await api.getCategoriesProducts(req.params.categoria)
         res.render('./products', {validacao_user,produtos,id_user})
     } else {
         validacao_user = false

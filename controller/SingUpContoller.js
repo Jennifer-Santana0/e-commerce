@@ -1,4 +1,5 @@
 const User = require('../models/User')
+const api = require('../api/api')
 
 const singup = (req,res) => {
     res.render('singup')
@@ -27,15 +28,16 @@ const login = (req,res) => {
     res.render('login')
 }
 
-const checkLogin = (req,res) => {
-    User.findOne({email:req.body.email}).then((user)=>{
+const checkLogin = async (req,res) => {
+    await User.findOne({email:req.body.email}).then( async (user)=>{
         if(user && user.password == req.body.password){
             let validacao_user = false
             let type_list = ['electronics','jewelery',"men's clothing","women's clothing"]
             let id_user = user._id
-            res.render('index', {type_list,validacao_user,id_user})
+            const products = await api.getAllProducts()
+            res.render('index', {type_list,validacao_user,id_user,products})
         }else {
-            req.flash('error_msg', 'This email is not registered!');
+            req.flash('error_msg', 'This email is not registered or incorrect password!');
             res.redirect('/')
         }
     }).catch((err)=>{
