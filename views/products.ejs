@@ -30,6 +30,87 @@
                 <div class="descricao">
                     <h5 class="texto-cortado"><%= produtos[0][index] %></h5>
                     <p>$<%= produtos[1][index] %></p>
+
+
+                    <%if (produtos[3][index] >= 1 && produtos[3][index] < 1.5) {%>
+                        
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+
+                    <%} else if (produtos[3][index] >= 1.5 && produtos[3][index] < 2) {%>
+                        
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+
+                    <%} else if (produtos[3][index] >= 2 && produtos[3][index] < 2.5) {%>
+                        
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+
+                    <%} else if (produtos[3][index] >= 2.5 && produtos[3][index] < 3) {%>
+                        
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+
+                    <%} else if (produtos[3][index] >= 3 && produtos[3][index] < 3.5) {%>
+                        
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-star"></i>
+
+                    <%} else if (produtos[3][index] >= 3.5 && produtos[3][index] < 4) {%>
+                        
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                        <i class="bi bi-star"></i>
+
+                    <%} else if (produtos[3][index] >= 4 && produtos[3][index] < 4.5) {%>
+                        
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star"></i>
+
+                    <%} else if (produtos[3][index] >= 4.5 && produtos[3][index] < 5) {%>
+                        
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+
+                    <%} else if (produtos[3][index] == 5) {%>
+                        
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+
+                    <%} else {%>
+                        <h5>An error occurred!</h5>
+                    <%}%>
+                  
+
+
+
                 </div>
             </div>
         <%}%>

@@ -15,7 +15,9 @@ const checkSingup = async (req, res) => {
             await User.create(req.body);
             const newUser = await User.findOne({ email: req.body.email });
             const id_user = newUser._id;
-            res.render('index', { type_list, validacao_user: false, id_user, error_msg: false });
+            let type_list = ['electronics','jewelery',"men's clothing","women's clothing"]
+            const products = await api.getAllProducts()
+            res.render('index', { type_list, validacao_user: false, id_user, products });
         }
     } catch (error) {
         console.error('Erro durante o cadastro:', error);
