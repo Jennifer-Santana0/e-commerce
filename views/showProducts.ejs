@@ -14,7 +14,6 @@
     </div>
     <h2>Best Selling Products</h2>
     <section>
-       
         
         <%for (let index = 0; index < products.length; index++) {%>
 
@@ -23,9 +22,6 @@
                 <div class="img">
                     <img src="<%= products[index].image %>" alt="foto do produto">
                 </div>
-                
-                
-                
 
                 <div class="descricao">
                     <h5 class="texto-cortado"><%= products[index].description %></h5>
@@ -117,6 +113,7 @@
         
     </section>
     
+    <script src="/js/main.js"></script>
 </body>
 </html>
 

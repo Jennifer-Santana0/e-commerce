@@ -68,6 +68,9 @@ button{
 p:last-child{
     text-align: center;
 }
+button{
+    cursor: pointer;
+}
 
 .span-error{
     color: red;

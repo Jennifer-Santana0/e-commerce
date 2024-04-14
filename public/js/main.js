@@ -215,32 +215,27 @@ btn_submit.forEach((el)=>{
 
 
 
+const cards = document.querySelectorAll('.cards')
 
+cards.forEach((el)=>{
+    el.addEventListener('click',()=>{
 
+        let xhr = new XMLHttpRequest()
+        xhr.open('GET','/index/about_product')
+        xhr.setRequestHeader('Content-type', 'application/json')
 
+        xhr.onload = () => {
+            if (xhr.status === 200) {
+                window.location.href = '/index/about_product'
+            } else {
+                console.log('Houve algum erro na requisição.');
+            }
+        }
 
+        xhr.send()
+    })
+})
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const passwordValid = () =>{
-//     if(campos[1].value.length>=8){
-//         removeError(1)
-//     }else {
-//         setError(1)
-//     }
-// }
+// console.log(el.childNodes[1].childNodes[1].currentSrc) img
+// console.log(el.childNodes[0].parentNode.childNodes[5].childNodes[1].innerHTML) nome
+// console.log(el.childNodes[0].parentNode.childNodes[5].childNodes[3].innerHTML) preço

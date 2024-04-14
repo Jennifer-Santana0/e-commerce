@@ -28,6 +28,7 @@ h2{
     height: 300px;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
 .cards .img{
