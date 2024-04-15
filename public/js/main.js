@@ -216,17 +216,19 @@ btn_submit.forEach((el)=>{
 
 
 const cards = document.querySelectorAll('.cards')
+const id_card = document.querySelector('#input_id').value
+
 
 cards.forEach((el)=>{
     el.addEventListener('click',()=>{
 
         let xhr = new XMLHttpRequest()
-        xhr.open('GET','/index/about_product')
+        xhr.open('GET','/index/about_product/' + id_card)
         xhr.setRequestHeader('Content-type', 'application/json')
 
         xhr.onload = () => {
             if (xhr.status === 200) {
-                window.location.href = '/index/about_product'
+                window.location.href = '/index/about_product/' + id_card 
             } else {
                 console.log('Houve algum erro na requisição.');
             }

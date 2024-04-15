@@ -14,12 +14,11 @@ routes.post('/check/login',SingUpConroller.checkLogin)
 routes.post('/index/:id_user',MainPageConroller.mainPage)
 
 routes.get('/index/:id_user/products/:categoria',CategoryConroller.showCategory)
-routes.get('/index/about_product', MainPageConroller.about_product)
+routes.get('/index/about_product/:id_user/:validacao_user', MainPageConroller.about_product)
 
 routes.post('/index/cart/:product_id/:product_name/:product_price/:product_img1/:product_img2/:product_img3/:product_img4', CartConroller.cartAdd)
 routes.post('/index/:id_user/cart', CartConroller.cart)
 routes.post('/index/cartedit/:newQuantity/:valueName',CartConroller.cartEdit)
-
 
 
 
