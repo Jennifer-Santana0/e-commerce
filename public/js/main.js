@@ -215,28 +215,6 @@ btn_submit.forEach((el)=>{
 
 
 
-const cards = document.querySelectorAll('.cards')
-const id_card = document.querySelector('#input_id').value
-
-
-cards.forEach((el)=>{
-    el.addEventListener('click',()=>{
-
-        let xhr = new XMLHttpRequest()
-        xhr.open('GET','/index/about_product/' + id_card)
-        xhr.setRequestHeader('Content-type', 'application/json')
-
-        xhr.onload = () => {
-            if (xhr.status === 200) {
-                window.location.href = '/index/about_product/' + id_card 
-            } else {
-                console.log('Houve algum erro na requisição.');
-            }
-        }
-
-        xhr.send()
-    })
-})
 
 // console.log(el.childNodes[1].childNodes[1].currentSrc) img
 // console.log(el.childNodes[0].parentNode.childNodes[5].childNodes[1].innerHTML) nome

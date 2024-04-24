@@ -8,11 +8,8 @@ const mainPage = async (req,res) => {
     res.render('index', {type_list,validacao_user,id_user,products})
 }
 
-const about_product = (req,res) => {
-    res.render('about_product', {id_user:req.params.id_user, validacao_user:req.params.validacao_user})
-}
+
 
 module.exports ={
     mainPage,
-    about_product
 }
